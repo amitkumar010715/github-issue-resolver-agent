@@ -53,10 +53,17 @@ Publishing should wait when unresolved `Medium` or `High` findings remain.
 This repository is structured as a Codex plugin root and includes a marketplace file at:
 
 ```text
+marketplace.json
 .agents/plugins/marketplace.json
 ```
 
-Add the marketplace:
+For Codex or agent-customization plugin installers that ask for a plugin marketplace URL, use:
+
+```text
+https://github.com/amitkumar010715/github-issue-resolver-agent.git
+```
+
+From the Codex CLI, add the marketplace:
 
 ```bash
 codex plugin marketplace add amitkumar010715/github-issue-resolver-agent
