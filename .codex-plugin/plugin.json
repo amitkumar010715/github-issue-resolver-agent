@@ -1,0 +1,39 @@
+{
+  "name": "agentic-security-audit",
+  "version": "0.1.0",
+  "description": "Run a focused security audit before publishing agentic open-source contributions.",
+  "author": {
+    "name": "Amit Kumar",
+    "url": "https://github.com/amitkumar010715"
+  },
+  "homepage": "https://github.com/amitkumar010715/agentic-security-audit",
+  "repository": "https://github.com/amitkumar010715/agentic-security-audit",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "audit",
+    "codex",
+    "copilot",
+    "claude",
+    "agentic-workflow"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agentic Security Audit",
+    "shortDescription": "Audit agentic contribution diffs before PRs.",
+    "longDescription": "Adds a reusable security audit playbook for Codex and companion instructions for GitHub Copilot and Claude. The audit focuses on security, privacy, dependency, and supply-chain risk introduced by a contribution before publication.",
+    "developerName": "Amit Kumar",
+    "category": "Security",
+    "capabilities": [
+      "Security Review",
+      "Code Review",
+      "Documentation"
+    ],
+    "defaultPrompt": [
+      "Security-audit my current contribution diff.",
+      "Review these changed files before I publish a PR.",
+      "Check this agentic workflow for supply-chain risk."
+    ],
+    "brandColor": "#2563EB"
+  }
+}
