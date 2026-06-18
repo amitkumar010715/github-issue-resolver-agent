@@ -6,6 +6,8 @@ Use it before publishing a pull request to review the code paths touched by an A
 
 ## What This Includes
 
+- Agent orchestration files: `.github/agents/*.agent.md`
+- Agent support skills: `.github/skills/*/SKILL.md`
 - Codex plugin manifest: `.codex-plugin/plugin.json`
 - Codex skill: `skills/agentic-security-audit/SKILL.md`
 - GitHub Copilot custom instruction file: `instructions/copilot-agentic-security-audit.instructions.md`
@@ -44,6 +46,20 @@ The Codex skill lives at:
 ```text
 skills/agentic-security-audit/SKILL.md
 ```
+
+## Agent Orchestration Usage
+
+The `.github/agents` folder contains a complete open-source contribution workflow:
+
+- `open-source-contributor.agent.md` coordinates the full flow.
+- `repo-finder.agent.md` finds suitable repositories.
+- `contribution-triage.agent.md` ranks useful opportunities.
+- `reproducer-planner.agent.md` validates the issue and scope.
+- `issue-solver.agent.md` implements the focused change.
+- `security-auditor.agent.md` reviews the completed change before publishing.
+- `pr-publisher.agent.md` prepares the PR after confirmation.
+
+The matching `.github/skills` folder is included because the agents reference those skills directly.
 
 ## GitHub Copilot Usage
 
