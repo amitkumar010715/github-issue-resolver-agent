@@ -8,6 +8,9 @@ Use it before publishing a pull request to review the code paths touched by an A
 
 - Agent orchestration files: `.github/agents/*.agent.md`
 - Agent support skills: `.github/skills/*/SKILL.md`
+- Copilot repository instructions: `.github/copilot-instructions.md`
+- Copilot path-specific instructions: `.github/instructions/agentic-security-audit.instructions.md`
+- Claude Code project instructions: `CLAUDE.md`
 - Codex plugin manifest: `.codex-plugin/plugin.json`
 - Codex skill: `skills/agentic-security-audit/SKILL.md`
 - GitHub Copilot custom instruction file: `instructions/copilot-agentic-security-audit.instructions.md`
@@ -63,7 +66,14 @@ The matching `.github/skills` folder is included because the agents reference th
 
 ## GitHub Copilot Usage
 
-Use this file as Copilot custom instructions:
+This repo includes Copilot-compatible instruction entrypoints:
+
+```text
+.github/copilot-instructions.md
+.github/instructions/agentic-security-audit.instructions.md
+```
+
+You can also use this standalone file as custom instructions:
 
 ```text
 instructions/copilot-agentic-security-audit.instructions.md
@@ -72,6 +82,12 @@ instructions/copilot-agentic-security-audit.instructions.md
 For repository-local Copilot instructions, copy or reference its contents from your Copilot instructions setup. It tells Copilot to run the same pre-PR audit and block or flag publishing when unresolved `Medium` or `High` findings remain.
 
 ## Claude Usage
+
+This repo includes a Claude Code project instruction file:
+
+```text
+CLAUDE.md
+```
 
 Use this file as Claude project instructions, or paste it into Claude before asking for a security review:
 
