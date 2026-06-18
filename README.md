@@ -50,7 +50,27 @@ Publishing should wait when unresolved `Medium` or `High` findings remain.
 
 ## Codex Usage
 
-This repository is structured as a Codex plugin root. After installing or adding it to a Codex plugin marketplace, use prompts like:
+This repository is structured as a Codex plugin root and includes a marketplace file at:
+
+```text
+.agents/plugins/marketplace.json
+```
+
+Add the marketplace:
+
+```bash
+codex plugin marketplace add amitkumar010715/github-issue-resolver-agent
+```
+
+Then open Codex and install the plugin:
+
+```text
+/plugins
+```
+
+Select the `GitHub Issue Resolver Agent` marketplace, open `GitHub Issue Resolver Agent`, and choose `Install plugin`.
+
+After installing it, start a new thread and use prompts like:
 
 - `Find and fix a suitable GitHub issue.`
 - `Resolve this GitHub bug and prepare a PR.`
