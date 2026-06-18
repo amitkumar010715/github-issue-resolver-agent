@@ -8,7 +8,7 @@
       "name": "github-issue-resolver-agent",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./plugins/github-issue-resolver-agent"
       },
       "policy": {
         "installation": "AVAILABLE",

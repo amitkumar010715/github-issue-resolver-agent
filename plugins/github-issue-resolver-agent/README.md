@@ -50,13 +50,7 @@ Publishing should wait when unresolved `Medium` or `High` findings remain.
 
 ## Codex Usage
 
-This repository is structured as a Codex plugin marketplace. The installable plugin lives at:
-
-```text
-plugins/github-issue-resolver-agent
-```
-
-The marketplace files are:
+This repository is structured as a Codex plugin root and includes a marketplace file at:
 
 ```text
 marketplace.json

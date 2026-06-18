@@ -1,0 +1,41 @@
+{
+  "name": "github-issue-resolver-agent",
+  "version": "0.1.0",
+  "description": "Find, scope, fix, audit, and publish GitHub issue contributions with an agentic workflow.",
+  "author": {
+    "name": "Amit Kumar",
+    "url": "https://github.com/amitkumar010715"
+  },
+  "homepage": "https://github.com/amitkumar010715/github-issue-resolver-agent",
+  "repository": "https://github.com/amitkumar010715/github-issue-resolver-agent",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "issue-resolver",
+    "bug-fixer",
+    "codex",
+    "copilot",
+    "claude",
+    "agentic-workflow"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GitHub Issue Resolver Agent",
+    "shortDescription": "Find, fix, audit, and publish GitHub issues.",
+    "longDescription": "Adds an agentic open-source contribution workflow for finding repositories, triaging issues, reproducing bugs, implementing focused fixes, auditing security risk, and preparing pull requests. Includes companion instructions for GitHub Copilot and Claude.",
+    "developerName": "Amit Kumar",
+    "category": "Security",
+    "capabilities": [
+      "Code Review",
+      "Issue Resolution",
+      "Security Review",
+      "Documentation"
+    ],
+    "defaultPrompt": [
+      "Find and fix a suitable GitHub issue.",
+      "Resolve this GitHub bug and prepare a PR.",
+      "Audit my fix before publishing the pull request."
+    ],
+    "brandColor": "#2563EB"
+  }
+}
