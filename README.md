@@ -1,23 +1,35 @@
-# Agentic Security Audit
+# GitHub Issue Resolver Agent
 
-A reusable security audit plugin and instruction pack for agentic contribution workflows.
+A reusable agent workflow and plugin package for finding GitHub issues, reproducing bugs, implementing focused fixes, auditing the result, and preparing pull requests.
 
-Use it before publishing a pull request to review the code paths touched by an AI-assisted or multi-agent contribution. The audit is intentionally scoped: it checks the completed diff, nearby behavior, dependencies, workflows, and documentation without turning every contribution into a full-project penetration test.
+Use it for practical open-source contribution work: discover a repo, triage a useful issue, validate the problem, make the smallest maintainable fix, run checks, complete a security audit, and prepare the PR.
 
 ## What This Includes
 
 - Agent orchestration files: `.github/agents/*.agent.md`
 - Agent support skills: `.github/skills/*/SKILL.md`
 - Copilot repository instructions: `.github/copilot-instructions.md`
-- Copilot path-specific instructions: `.github/instructions/agentic-security-audit.instructions.md`
-- Claude Code project instructions: `CLAUDE.md`
+- Copilot path-specific instructions: `.github/instructions/github-issue-resolver-agent.instructions.md`
 - Codex plugin manifest: `.codex-plugin/plugin.json`
+- Codex issue resolver skill: `skills/github-issue-resolver-agent/SKILL.md`
 - Codex skill: `skills/agentic-security-audit/SKILL.md`
-- GitHub Copilot custom instruction file: `instructions/copilot-agentic-security-audit.instructions.md`
-- Claude project/chat instruction file: `instructions/claude-agentic-security-audit.md`
+- GitHub Copilot custom instruction file: `instructions/copilot-github-issue-resolver-agent.instructions.md`
+- Claude project/chat instruction file: `instructions/claude-github-issue-resolver-agent.md`
 - Shared audit playbook: `instructions/shared-security-audit-playbook.md`
 
-## What It Reviews
+## What It Does
+
+- Finds active GitHub repositories that match the user's stack.
+- Triages open issues, discussions, docs gaps, tests, and PR review opportunities.
+- Reproduces or validates the selected issue before editing.
+- Implements the smallest useful fix or improvement.
+- Runs focused verification.
+- Performs a scoped security, privacy, dependency, and supply-chain audit.
+- Prepares a pull request after user confirmation.
+
+## Security Audit Step
+
+The workflow still includes a security audit before publishing. It reviews:
 
 - Authentication, authorization, tenant isolation, and permission boundaries.
 - Input validation, output encoding, redirects, path traversal, injection, unsafe eval, unsafe deserialization, and command execution.
@@ -40,11 +52,17 @@ Publishing should wait when unresolved `Medium` or `High` findings remain.
 
 This repository is structured as a Codex plugin root. After installing or adding it to a Codex plugin marketplace, use prompts like:
 
-- `Security-audit my current contribution diff.`
-- `Review these changed files before I publish a PR.`
-- `Check this agentic workflow for supply-chain risk.`
+- `Find and fix a suitable GitHub issue.`
+- `Resolve this GitHub bug and prepare a PR.`
+- `Audit my fix before publishing the pull request.`
 
-The Codex skill lives at:
+The main Codex skill lives at:
+
+```text
+skills/github-issue-resolver-agent/SKILL.md
+```
+
+The security audit support skill lives at:
 
 ```text
 skills/agentic-security-audit/SKILL.md
@@ -70,34 +88,44 @@ This repo includes Copilot-compatible instruction entrypoints:
 
 ```text
 .github/copilot-instructions.md
-.github/instructions/agentic-security-audit.instructions.md
+.github/instructions/github-issue-resolver-agent.instructions.md
 ```
 
 You can also use this standalone file as custom instructions:
 
 ```text
-instructions/copilot-agentic-security-audit.instructions.md
+instructions/copilot-github-issue-resolver-agent.instructions.md
 ```
 
 For repository-local Copilot instructions, copy or reference its contents from your Copilot instructions setup. It tells Copilot to run the same pre-PR audit and block or flag publishing when unresolved `Medium` or `High` findings remain.
 
 ## Claude Usage
 
-This repo includes a Claude Code project instruction file:
+Use this file as Claude project instructions, or paste it into Claude before asking it to help resolve a GitHub issue:
 
 ```text
-CLAUDE.md
+instructions/claude-github-issue-resolver-agent.md
 ```
 
-Use this file as Claude project instructions, or paste it into Claude before asking for a security review:
+It gives Claude the same issue-resolution workflow plus the scoped audit role, checklist, risk scale, and output format.
 
-```text
-instructions/claude-agentic-security-audit.md
+## Default Contribution Output
+
+```markdown
+## Contribution Report
+
+Repository:
+Contribution type:
+Issue/PR/Discussion:
+Branch:
+Files changed:
+Verification:
+Security audit:
+Published PR/comment:
+Next maintainer step:
 ```
 
-It gives Claude the same scoped audit role, checklist, risk scale, and output format.
-
-## Default Output
+## Security Audit Output
 
 ```markdown
 ## Security Audit

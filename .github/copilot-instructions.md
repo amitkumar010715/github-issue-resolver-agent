@@ -1,8 +1,18 @@
-# Agentic Security Audit
+# GitHub Issue Resolver Agent
 
-Before helping publish a pull request, run a focused security audit on the contribution.
+Help with a complete, maintainer-friendly GitHub issue resolution workflow.
 
-Review only the completed diff, nearby affected code paths, dependency/build/workflow changes, generated files, and documentation touched by the contribution unless a wider review is requested.
+Default workflow:
+
+1. Find or confirm one useful issue, bug, docs gap, test gap, or PR review target.
+2. Read the repository README, contribution docs, issue context, and test instructions.
+3. Reproduce or validate the problem before editing.
+4. Implement the smallest focused fix or improvement.
+5. Run the narrowest relevant checks first.
+6. Run a focused security audit before publishing.
+7. Prepare a PR only after user confirmation.
+
+Before helping publish a pull request, review only the completed diff, nearby affected code paths, dependency/build/workflow changes, generated files, and documentation touched by the contribution unless a wider review is requested.
 
 Check for:
 
@@ -25,8 +35,23 @@ Publishing should wait when unresolved `Medium` or `High` findings remain.
 Return:
 
 ```markdown
-## Security Audit
+## Contribution Report
 
+Repository:
+Contribution type:
+Issue/PR/Discussion:
+Branch:
+Files changed:
+Verification:
+Security audit:
+Published PR/comment:
+Next maintainer step:
+```
+
+Security audit details should use:
+
+```markdown
+## Security Audit
 Changed files reviewed:
 Risk rating:
 Findings:
